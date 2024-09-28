@@ -2,7 +2,7 @@ import pandas as pd
 from sklearn.metrics.pairwise import cosine_similarity
 import numpy as np
 
-def collab(df, df1, N):
+def collab(df, df1, N, current_user_likes, current_user_dislikes):
     logs = df1
     video_stats = df
 
@@ -34,8 +34,8 @@ def collab(df, df1, N):
 
     # Step 6: Incorporate Likes/Dislikes of the Current User for Content-Based Filtering
     # Assume we have like/dislike data for the current user
-    current_user_likes = {'6278e0e9-6ea7-4e34-8d08-43d81bce8ed1'}  # Example: Set of video_ids the current user liked
-    current_user_dislikes = {'decad7c6-0d2f-4200-9d67-e69f7276db8e'}  # Example: Set of video_ids the current user disliked
+    #current_user_likes = {'6278e0e9-6ea7-4e34-8d08-43d81bce8ed1'}  # Example: Set of video_ids the current user liked
+    #current_user_dislikes = {'decad7c6-0d2f-4200-9d67-e69f7276db8e'}  # Example: Set of video_ids the current user disliked
 
     # Get the categories and authors of liked/disliked videos
     liked_videos_info = video_stats[video_stats['video_id'].isin(current_user_likes)]
